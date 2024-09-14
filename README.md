@@ -6,6 +6,7 @@ do dinossauro” que é integrado ao navegador do Google Chrome. Similar ao jogo
 dinossauro, A Scooter Odyssey conta com o objetivo de pular obstáculos que surgem 
 aleatoriamente diante do jogador, juntamente com a presença de um score que o desafia atingir 
 a maior pontuação. 
+
 O diferencial do jogo está justamente em ambientar a jogatina no campus da 
 Universidade Federal de Santa Maria, com menções ao Centro de Tecnologia, a cafeteria 
 Cosmopolita, o Planetário, entre outros. Diferentemente do jogo do dinossauro, aqui os 
@@ -13,12 +14,14 @@ obstáculos são o vírus da COVID-19, e controlamos um personagem que utiliza u
 para locomover-se, enquanto a velocidade do jogo aumenta à medida que ele salta. Há também 
 um adicional de sobrevidas, representado por cafés que o jogador pode coletar, sendo possível 
 acumular no máximo três. 
+
 À medida que o café é acumulado, consta-se a quantidade de cafés ingeridos no canto 
 superior esquerdo da tela e o visual do protagonista muda. Quando ele choca-se com o vírus, 
 perde-se um café. Caso não tenha nenhum, este muda seu visual para um personagem menor e 
 doente e se colidir mais uma vez, é fim de jogo, sendo necessário apertar enter para zerar o 
 score e reiniciar a jogatina. O score consta-se no canto superior direito, logo após a pontuação 
 “HS” que é a maior pontuação do jogador desde que este iniciou o jogo. 
+
 Tratando mais especificamente do código, utilizou-se como base os conhecimentos 
 adquiridos na disciplina de Algoritmos e Programação e funções da biblioteca Allegro, 
 retiradas do site oficial dos desenvolvedores. A lógica do jogo é basicamente os bitmaps do 
