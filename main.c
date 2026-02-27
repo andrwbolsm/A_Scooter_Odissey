@@ -41,7 +41,7 @@ int main()
     bool agachado=false;
     bool vilao=false;
 
-    ALLEGRO_EVENT_QUEUE *event = NULL;
+    ALLEGRO_EVENT_QUEUE *event = 0;
 
     //INICIALIZAÇÕES
     al_init();
@@ -394,8 +394,8 @@ int main()
     }
 
     //CRIAR FONTES
-    ALLEGRO_FONT *fonteTITLE = al_load_font("fonte/fonte.ttf",20,NULL);
-    ALLEGRO_FONT *fontemenu = al_load_font("fonte/fonte.ttf",10,NULL);
+    ALLEGRO_FONT *fonteTITLE = al_load_font("fonte/fonte.ttf",20,0);
+    ALLEGRO_FONT *fontemenu = al_load_font("fonte/fonte.ttf",10,0);
 
     if(!fonteTITLE)
     {
@@ -447,10 +447,10 @@ int main()
     }
 
     //CRIAÇÃO DOS ELEMENTOS DO MENU
-    al_play_sample(song, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
+    al_play_sample(song, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, 0);
     al_draw_bitmap(fundo, cx, cy, 0);
-    al_draw_text (fonteTITLE,al_map_rgb(255,255,255),120,100,NULL,"A SCOOTER ODYSSEY");
-    al_draw_text (fontemenu,al_map_rgb(0,0,0),140,170,NULL,"PRESSIONE ENTER PARA INICIAR");
+    al_draw_text (fonteTITLE,al_map_rgb(255,255,255),120,100,0,"A SCOOTER ODYSSEY");
+    al_draw_text (fontemenu,al_map_rgb(0,0,0),140,170,0,"PRESSIONE ENTER PARA INICIAR");
     al_draw_bitmap(scooter,pos_scooterx,pos_scootery,0);
 
     //FUNÇÕES DE EVENTO
@@ -485,7 +485,7 @@ int main()
         return -1;
     }
 
-    srand(time(NULL));
+    srand(time(0));
     al_flip_display();
     al_start_timer(tempo);
 
@@ -502,7 +502,7 @@ while(!fim)
 
     {switch (ev.keyboard.keycode)
     {case ALLEGRO_KEY_ENTER:
-        {al_play_sample(deathsong, 3.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL); inicio = true; break;}
+        {al_play_sample(deathsong, 3.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, 0); inicio = true; break;}
      case ALLEGRO_EVENT_DISPLAY_CLOSE:
         {fim=true; break;}}
     }
@@ -568,7 +568,7 @@ while(!fim)
         switch(ev.type)
         {case ALLEGRO_EVENT_KEY_DOWN:
             {if(ev.keyboard.keycode == ALLEGRO_KEY_UP&&pos_scootery>=325)
-                {al_play_sample(jumpsound, 3.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL); jump=true; speed+=0.05;}
+                {al_play_sample(jumpsound, 3.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, 0); jump=true; speed+=0.05;}
         break;}
 
 
@@ -580,7 +580,7 @@ while(!fim)
         //COLISÕES
          if(copox<=pos_scooterx&&copox>18)
             if(pos_scootery>=300||pos_scootery>=copoy-35)
-                {imune+=1; al_play_sample(drinkingsound, 5.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL); copox=largura_t+10000;}
+                {imune+=1; al_play_sample(drinkingsound, 5.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, 0); copox=largura_t+10000;}
 
         if(enemx<=pos_scooterx&&enemx>15)
             {if(pos_scootery>=300||pos_scootery>=enemy-50)
@@ -589,7 +589,7 @@ while(!fim)
         if(imune<-1)
         {if(enemx<=pos_scooterx&&enemx>15)
             if(pos_scootery>=300||pos_scootery>=enemy-50)
-             gameover=true; al_play_sample(deathsong, 5.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);}
+             gameover=true; al_play_sample(deathsong, 5.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, 0);}
 
 
         //DESENHO DA QTD DE CAFÉS NA TELA
@@ -612,8 +612,8 @@ while(!fim)
         {
             al_flip_display();
 
-            al_draw_text (fonteTITLE,al_map_rgb(255,0,0),200,100,NULL,"GAME OVER");
-            al_draw_text (fontemenu,al_map_rgb(255,0,0),115,170,NULL,"PRESSIONE ENTER PARA REINICIAR!");
+            al_draw_text (fonteTITLE,al_map_rgb(255,0,0),200,100,0,"GAME OVER");
+            al_draw_text (fontemenu,al_map_rgb(255,0,0),115,170,0,"PRESSIONE ENTER PARA REINICIAR!");
 
             if(score>hi)
                 hi=score;
