@@ -1,9 +1,3 @@
-# A Scooter Odyssey
-
-A 2D endless-runner game written in C, developed as a course project for the Algorithms and Programming class in the Aerospace Engineering program at the Federal University of Santa Maria (UFSM), Brazil.
-
----
-
 ## About
 
 *A Scooter Odyssey* is inspired by the Chrome T-Rex game. The player controls a character riding a scooter across the UFSM campus, dodging randomly generated COVID-19 virus obstacles while trying to achieve the highest score possible.
